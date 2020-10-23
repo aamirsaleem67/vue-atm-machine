@@ -21,8 +21,8 @@
 <script>
 import { required, maxLength, minLength } from "vuelidate/lib/validators";
 import VField from "./V-field.vue";
-
 import Vue from "vue";
+import router from "../router/index";
 
 export default {
   components: {
@@ -52,6 +52,9 @@ export default {
   methods: {
     submit() {
       this.$v.$touch();
+      if (!this.$v.$error) {
+        router.push({ name: "AccountOptions" });
+      }
     }
   }
 };

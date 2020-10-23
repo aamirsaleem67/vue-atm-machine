@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-credit-card-validation": "^0.1.9",
+    "vue-router": "^3.4.7",
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
