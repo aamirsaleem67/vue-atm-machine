@@ -2,9 +2,9 @@ import router from "../router/index";
 import store from "../store/index";
 
 router.beforeEach((to, _, next) => {
+  const isAunthenticated = store.getters["auth/isAuthenticated"];
   // Determine whether the user has logged in
-  console.log("store", store);
-  if (!store.isAunthenticated) {
+  if (!isAunthenticated) {
     if (to.path === "/login") {
       next();
     } else {
@@ -12,7 +12,7 @@ router.beforeEach((to, _, next) => {
     }
   }
 
-  if (store.isAunthenticated) {
+  if (isAunthenticated) {
     if (to.path === "/login") {
       next("/");
     } else {
