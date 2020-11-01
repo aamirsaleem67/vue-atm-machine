@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import { setToken, getToken, removeToken } from "../utils/local-storage";
 import randomId from "../utils/random-id";
+import router from "../router/index";
 
 Vue.use(Vuex);
 
@@ -12,7 +13,7 @@ export default new Vuex.Store({
   mutations: {},
   modules: {
     auth: {
-      namespaced: true,
+      // namespaced: true,
       state: {
         token: getToken()
       },
@@ -28,6 +29,7 @@ export default new Vuex.Store({
         logout({ commit }) {
           removeToken();
           commit("setToken", "");
+          router.push("/login");
         }
       },
       mutations: {
@@ -36,6 +38,7 @@ export default new Vuex.Store({
           state.token = payload;
         }
       }
-    }
+    },
+    user: {}
   }
 });

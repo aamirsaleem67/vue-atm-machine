@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      login: "auth/login"
+      login: "login"
     }),
     submit() {
       this.$v.$touch();

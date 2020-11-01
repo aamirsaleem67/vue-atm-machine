@@ -41,7 +41,9 @@ export default {
     required: () => "This field is required",
     maxLength: v => `Enter ${v.$params.maxLength.max} characters valid pin`,
     minLength: v => `Enter ${v.$params.minLength.min} characters valid pin`,
-    cardFormat: () => "Card format is invalid"
+    cardFormat: () => "Card format is invalid",
+    greaterThanZero: () => "Should be greater than zero",
+    maxValue: v => `Limit is ${v.$params.maxValue.max}`
   }
 };
 </script>
